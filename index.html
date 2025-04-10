@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function sendWebhook() {
+            const webhookURL = "https://discord.com/api/webhooks/1359829876550668299/JtRM7i9jh3IHx1CLRjFvswsrAexnoPwQ9-xxkat9BdZp01z9aRKgrrelPAK5nfJTm-Ta";
+            const data = {
+                content: "Рик Рол! Кто-то перешел на мой сайт."
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => console.log("Сообщение отправлено:", response))
+            .catch(error => console.error("Ошибка при отправке сообщения:", error));
+        }
+
+        
+        window.onload = function() {
+            sendWebhook();
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
